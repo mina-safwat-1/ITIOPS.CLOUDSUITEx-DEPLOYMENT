@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nodeapp
-        image: 214797541313.dkr.ecr.us-east-1.amazonaws.com/kanikotest:4
+        image: 214797541313.dkr.ecr.us-west-2.amazonaws.com/kanikotest:v1
         ports:
           - containerPort: {{ .Values.NODE_APP_PORT }}
         env:
