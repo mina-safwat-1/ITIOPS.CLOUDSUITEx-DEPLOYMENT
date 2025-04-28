@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nodeapp
-        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        image: {{ .Values.image.tag }}
         ports:
           - containerPort: {{ .Values.NODE_APP_PORT }}
         env:
