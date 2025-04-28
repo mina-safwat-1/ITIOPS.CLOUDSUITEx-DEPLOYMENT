@@ -1,8 +1,1 @@
-helm:
-  parameters:
-  - name: image.name
-    value: 214797541313.dkr.ecr.us-west-2.amazonaws.com/kanikotest
-    forcestring: true
-  - name: image.tag
-    value: v5
-    forcestring: true
+
