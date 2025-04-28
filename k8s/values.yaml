@@ -13,4 +13,4 @@ REDIS_PORT: 6379
 REDIS_SERVICE_PORT: 6379
 image:
   repository: 214797541313.dkr.ecr.us-west-2.amazonaws.com/kanikotest
-  tag: 214797541313.dkr.ecr.us-west-2.amazonaws.com/kanikotest:v6
+  tag: 214797541313.dkr.ecr.us-west-2.amazonaws.com/kanikotest:v7
