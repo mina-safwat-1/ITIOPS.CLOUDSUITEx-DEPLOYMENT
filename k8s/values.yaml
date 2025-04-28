@@ -12,7 +12,4 @@ REDIS_REPLICA_COUNT: 1
 REDIS_PORT: 6379
 REDIS_SERVICE_PORT: 6379
 image:
-  repository: 214797541313.dkr.ecr.us-west-2.amazonaws.com/kanikotest
-  tag: 214797541313.dkr.ecr.us-west-2.amazonaws.com/kanikotest:v7
-  repository:image:
-    tag: 214797541313.dkr.ecr.us-west-2.amazonaws.com/kanikotest:v8
+  tag: 773893527461.dkr.ecr.us-east-1.amazonaws.com/node-app-jenkins:v1
