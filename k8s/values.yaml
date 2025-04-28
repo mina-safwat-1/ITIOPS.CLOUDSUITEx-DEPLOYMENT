@@ -7,12 +7,10 @@ MYSQL_VERSION: 8.0
 MYSQL_REPLICA_COUNT: 1
 MYSQL_PORT: 3306
 MYSQL_SERVICE_PORT: 3306
-
 # Redis Configuration
 REDIS_REPLICA_COUNT: 1
 REDIS_PORT: 6379
 REDIS_SERVICE_PORT: 6379
-
 image:
   repository: 214797541313.dkr.ecr.us-west-2.amazonaws.com/kanikotest
-  tag: v2
+  tag: 214797541313.dkr.ecr.us-west-2.amazonaws.com/kanikotest:v6
