@@ -10,8 +10,13 @@ metadata:
     alb.ingress.kubernetes.io/healthcheck-port: "{{ .Values.NODE_APP_SERVICE_PORT }}" # Replace with your actual port
     alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=60
 spec:
+  tls:
+  - hosts:
+    - www.itiproject.site
+    secretName: www-tls
   rules:
-  - http:
+  - host: www.itiproject.site
+    http:
       paths:
       - path: /
         pathType: Prefix
