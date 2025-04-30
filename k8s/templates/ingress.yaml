@@ -9,6 +9,14 @@ metadata:
     alb.ingress.kubernetes.io/healthcheck-path: /db
     alb.ingress.kubernetes.io/healthcheck-port: "{{ .Values.NODE_APP_SERVICE_PORT }}" # Replace with your actual port
     alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=60
+
+    # Redirect all HTTP to HTTPS
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
+
+    # Specify HTTPS listener
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+
+
 spec:
   tls:
   - hosts:
