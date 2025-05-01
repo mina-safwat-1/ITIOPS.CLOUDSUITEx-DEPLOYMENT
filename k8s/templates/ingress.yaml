@@ -10,8 +10,6 @@ metadata:
     alb.ingress.kubernetes.io/healthcheck-port: "80"
     alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=60
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
-    alb.ingress.kubernetes.io/group.name: itiproject-alb
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:773893527461:certificate/9fcb75cb-6191-4179-ac0d-2b5ddb0da7cd
 spec:
   ingressClassName: alb  # ✅ THIS IS REQUIRED
   tls:
