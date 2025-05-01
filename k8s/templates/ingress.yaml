@@ -2,34 +2,30 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: db-ingress
+  namespace: argoapp
   annotations:
-    kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/healthcheck-path: /db
-    alb.ingress.kubernetes.io/healthcheck-port: "{{ .Values.NODE_APP_SERVICE_PORT }}" # Replace with your actual port
+    alb.ingress.kubernetes.io/healthcheck-port: "80"
     alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=60
-
-    # Redirect all HTTP to HTTPS
     alb.ingress.kubernetes.io/ssl-redirect: '443'
-
-    # Specify HTTPS listener
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
-
-
 spec:
+  ingressClassName: alb  # ✅ THIS IS REQUIRED
   tls:
-  - hosts:
-    - www.itiproject.site
-    secretName: www-tls
+    - hosts:
+        - www.itiproject.site
+      secretName: www-tls
   rules:
-  - host: www.itiproject.site
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: nodeapp-service
-            port:
-              number: {{ .Values.NODE_APP_SERVICE_PORT }}
+    - host: www.itiproject.site
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nodeapp-service
+                port:
+                  number: 80  # Replace if you use a different port
+
