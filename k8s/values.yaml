@@ -12,4 +12,4 @@ REDIS_REPLICA_COUNT: 1
 REDIS_PORT: 6379
 REDIS_SERVICE_PORT: 6379
 image:
-  tag: 773893527461.dkr.ecr.us-east-1.amazonaws.com/node-app-jenkins:v68
+  tag: 773893527461.dkr.ecr.us-east-1.amazonaws.com/node-app-jenkins:v70
